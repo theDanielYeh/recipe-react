@@ -1,9 +1,9 @@
-import Veggie from "../components/veggie";
-import Popular from "../components/popular";
+import Veggie from "../components/Veggie";
+import Popular from "../components/Popular";
 
 import React from 'react'
 
-function home() {
+function Home() {
   return (
     <div>
       <Veggie />
@@ -12,4 +12,4 @@ function home() {
   )
 }
 
-export default home
+export default Home

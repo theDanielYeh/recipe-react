@@ -1,9 +1,9 @@
 import React from 'react'
 
-function veggie() {
+function Veggie() {
   return (
-    <div>veggie</div>
+    <div>Veggie</div>
   )
 }
 
-export default veggie
+export default Veggie
