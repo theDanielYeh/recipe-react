@@ -18,28 +18,23 @@ function Popular() {
     setPopular(data.recipes);
   }
 
-  // return (
-  //   <div>
-  //     {popular.map(recipe => {
-      return (
-        // <div key={recipe.id}>
-        //   <p>{recipe.title}</p>
-        // </div>
-        <Wrapper>
-          <h3>Popular Picks</h3>
+  return (
+    <Wrapper>
+      <h3>Popular Picks</h3>
+        <Splide>
           {popular.map((recipe) => {
             return (
+              <SplideSlide>
               <Card>
                 <p>{recipe.title}</p>
                 <img src={recipe.image} alt={recipe.title} />
               </Card>
+              </SplideSlide>
             )
           })}
-        </Wrapper>
-      )
-  //   })}
-  //   </div>
-  // )
+        </Splide>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.div`
