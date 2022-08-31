@@ -31,28 +31,30 @@ function Veggie() {
   }
 
   return (
-    <Wrapper>
-      <h3>Vegetarian Picks</h3>
-      <Splide options={{
-        perPage: 3,
-        arrows: false,
-        pagination: false,
-        drag: "free",
-        gap: "5rem",
-      }}>
-        {veggie.map((recipe) => {
-          return (
-            <SplideSlide key={recipe.id}>
-              <Card>
-                <p>{recipe.title}</p>
-                <img src={recipe.image} alt={recipe.title} />
-                <Gradient />
-              </Card>
-            </SplideSlide>
-          )
-        })}
-      </Splide>
-    </Wrapper>
+    <div>
+      <Wrapper>
+        <h3>Vegetarian Picks</h3>
+        <Splide options={{
+          perPage: 3,
+          arrows: false,
+          pagination: false,
+          drag: "free",
+          gap: "5rem",
+        }}>
+          {veggie.map((recipe) => {
+            return (
+              <SplideSlide key={recipe.id}>
+                <Card>
+                  <p>{recipe.title}</p>
+                  <img src={recipe.image} alt={recipe.title} />
+                  <Gradient />
+                </Card>
+              </SplideSlide>
+            )
+          })}
+        </Splide>
+      </Wrapper>
+    </div>
   )
 }
 

@@ -30,8 +30,9 @@ function Popular() {
   }
 
   return (
-    <Wrapper>
-      <h3>Popular Picks</h3>
+    <div>
+      <Wrapper>
+        <h3>Popular Picks</h3>
         <Splide options={{
           perPage: 4,
           arrows: false,
@@ -42,16 +43,17 @@ function Popular() {
           {popular.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-              <Card>
-                <p>{recipe.title}</p>
-                <img src={recipe.image} alt={recipe.title} />
-                <Gradient />
-              </Card>
+                <Card>
+                  <p>{recipe.title}</p>
+                  <img src={recipe.image} alt={recipe.title} />
+                  <Gradient />
+                </Card>
               </SplideSlide>
             )
           })}
         </Splide>
-    </Wrapper>
+      </Wrapper>
+    </div>
   )
 }
 
