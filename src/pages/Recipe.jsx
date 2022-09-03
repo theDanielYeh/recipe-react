@@ -19,7 +19,16 @@ function Recipe() {
   }, [params.name])
 
   return (
-    <div>{details.title}</div>
+    <DetailWrapper>
+      <div>
+        <h2>{details.title}</h2>
+        <img src={details.image} alt="" />
+      </div>
+      <Info>
+        <Button>Instructions</Button>
+        <Button>Ingredients</Button>
+      </Info>
+    </DetailWrapper>
   )
 }
 
