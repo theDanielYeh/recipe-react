@@ -43,10 +43,12 @@ function Veggie() {
           resetProgress: true,
           type: 'loop',
           snap: true,
+          perMove: 1,
           perPage: 3,
           arrows: false,
           pagination: true,
           drag: "free",
+          flickMaxPages: 1,
           gap: "3rem",
           breakpoints: {
             1300: {
