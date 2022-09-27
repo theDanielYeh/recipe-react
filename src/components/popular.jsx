@@ -120,7 +120,7 @@ const Card = styled.div`
     align-items: center;
     @media screen and (max-width: 900px) {
       bottom: 10%;
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
 `;
