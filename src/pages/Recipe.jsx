@@ -60,6 +60,11 @@ const DetailWrapper = styled.div`
   margin-top: 5rem;
   margin-bottom: 5rem;
   display: flex;
+  justify-content: center;
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
   .active {
     background: linear-gradient(35deg, #494949, #313131);
     color: white
