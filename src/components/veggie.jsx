@@ -69,6 +69,10 @@ function Veggie() {
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;
+  @media screen and (max-width: 900px) {
+    margin-top: -2em;
+    text-align: center;
+  }
 `;
 
 const Card = styled.div`
