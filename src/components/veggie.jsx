@@ -33,19 +33,25 @@ function Veggie() {
 
   return (
     <div>
-      <Wrapper>
+      <Wrapper className='veggieWrapper'>
         <h3>Vegetarian Picks</h3>
         <Splide options={{
+          snap: true,
           perPage: 3,
           arrows: false,
-          pagination: false,
+          pagination: true,
           drag: "free",
-          gap: "5rem",
+          gap: "3rem",
+          breakpoints: {
+            1300: {
+              perPage: 2,
+            },
+          },
         }}>
           {veggie.map((recipe) => {
             return (
-              <SplideSlide key={recipe.id}>
-                <Card>
+              <SplideSlide className='veggieSlide' key={recipe.id}>
+                <Card className='veggieCard'>
                   <Link to={'/recipe/' + recipe.id}>
                     <p>{recipe.title}</p>
                     <img src={recipe.image} alt={recipe.title} />
@@ -70,6 +76,9 @@ const Card = styled.div`
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
+  @media screen and (max-width: 900px) {
+    min-height: 10rem;
+  }
 
   img {
     border-radius: 2rem;
@@ -88,7 +97,7 @@ const Card = styled.div`
     transform: translate(-50%, 0%);
     color: white;
     width: 100%;
-    text-align: center:
+    text-align: center;
     font-weight: 600;
     font-size: 1rem;
     height: 40%;

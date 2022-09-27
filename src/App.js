@@ -10,12 +10,15 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Nav>
-        <GiKnifeFork />
-        <Logo to={"/recipe-react"}>yummies</Logo>
-      </Nav>
-        <Search />
-        <Category />
+        <div className="topDiv">
+          <Nav>
+            <GiKnifeFork />
+            <Logo to={"/recipe-react"}>yummies</Logo>
+          </Nav>
+          <Search />
+          <Category />
+        </div>
+
         <Pages />
       </BrowserRouter>
     </div>

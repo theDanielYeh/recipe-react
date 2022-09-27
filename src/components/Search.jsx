@@ -30,7 +30,11 @@ const FormStyle = styled.form`
   margin: 0rem 20rem;
   div {
     position: relative;
-    width: 100%;
+    width: 25em;
+    @media screen and (max-width: 900px) {
+      width: 15em;
+      margin-top: -2em;
+    }
   }
   input {
     border: none;
@@ -42,6 +46,9 @@ const FormStyle = styled.form`
     border-radius: 1rem;
     outline: none;
     width: 100%;
+    @media screen and (max-width: 900px) {
+      font-size: 1.2rem;
+    }
   }
   svg {
     position: absolute;

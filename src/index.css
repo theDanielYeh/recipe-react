@@ -12,6 +12,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 code {
@@ -33,4 +36,39 @@ h3 {
 
 a {
   color: rgb(56, 56, 56);
+}
+
+.veggieSlide {
+  min-width: 400px ;
+  max-width: 400px;
+}
+
+.App {
+  width: 1300px;
+}
+
+@media screen and (max-width: 1300px) {
+  .App {
+      width: 850px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+  .veggieSlide {
+      min-width: 10rem;
+      max-width: 10rem;
+    }
+  .App {
+    width: 23rem;
+  }
+  .topDiv {
+    margin-top: -2em;
+  }
+}
+
+.topDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
