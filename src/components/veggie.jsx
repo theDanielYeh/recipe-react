@@ -36,6 +36,12 @@ function Veggie() {
       <Wrapper className='veggieWrapper'>
         <h3>Vegetarian Picks</h3>
         <Splide options={{
+          autoplay: true,
+          interval: 5000,
+          speed: 3000,
+          pauseOnHover: true,
+          resetProgress: true,
+          type: 'loop',
           snap: true,
           perPage: 3,
           arrows: false,
@@ -103,11 +109,15 @@ const Card = styled.div`
     width: 100%;
     text-align: center;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.5rem;
     height: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 900px) {
+      bottom: 10%;
+      font-size: 1rem;
+    }
   }
 `;
 

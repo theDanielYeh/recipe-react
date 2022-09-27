@@ -35,15 +35,30 @@ function Popular() {
       <Wrapper>
         <h3>Popular Picks</h3>
         <Splide options={{
+          autoplay: true,
+          interval: 5000,
+          speed: 3000,
+          pauseOnHover: true,
+          resetProgress: true,
+          type: 'loop',
+          snap: true,
           perPage: 4,
           arrows: false,
-          pagination: false,
+          pagination: true,
           drag: "free",
-          gap: "5rem",
+          gap: "3rem",
+          breakpoints: {
+            1300: {
+              perPage: 3,
+            },
+            900: {
+              gap: "1rem",
+            },
+          },
         }}>
           {popular.map((recipe) => {
             return (
-              <SplideSlide key={recipe.id}>
+              <SplideSlide className="popularSlide" key={recipe.id}>
                 <Card>
                   <Link to={"/recipe/" + recipe.id}>
                     <p>{recipe.title}</p>
@@ -62,6 +77,10 @@ function Popular() {
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;
+  @media screen and (max-width: 900px) {
+    margin-top: -2em;
+    text-align: center;
+  }
 `;
 
 const Card = styled.div`
@@ -69,6 +88,9 @@ const Card = styled.div`
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
+  @media screen and (max-width: 900px) {
+    min-height: 10rem;
+  }
 
   img {
     border-radius: 2rem;
@@ -87,13 +109,17 @@ const Card = styled.div`
     transform: translate(-50%, 0%);
     color: white;
     width: 100%;
-    text-align: center:
+    text-align: center;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.5rem;
     height: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 900px) {
+      bottom: 10%;
+      font-size: 1rem;
+    }
   }
 `;
 
