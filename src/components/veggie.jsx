@@ -36,19 +36,19 @@ function Veggie() {
       <Wrapper className='veggieWrapper'>
         <h3>Vegetarian Picks</h3>
         <Splide options={{
-          autoplay: true,
-          interval: 5000,
-          speed: 3000,
-          pauseOnHover: true,
-          resetProgress: true,
-          type: 'loop',
+          // autoplay: true,
+          // interval: 5000,
+          // speed: 3000,
+          // pauseOnHover: true,
+          // resetProgress: true,
+          // type: 'loop',
           snap: true,
-          perMove: 1,
+          // perMove: 1,
           perPage: 3,
           arrows: false,
           pagination: true,
           drag: "free",
-          flickMaxPages: 1,
+          // flickMaxPages: 1,
           gap: "3rem",
           breakpoints: {
             1300: {
