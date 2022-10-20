@@ -41,6 +41,7 @@ function Recipe() {
         {activeTab === 'instructions' && (
           <div>
           <h3 dangerouslySetInnerHTML={{__html: details.summary}}></h3>
+          <h3>Step-by-Step</h3>
           <h3 dangerouslySetInnerHTML={{__html: details.instructions}}></h3>
           </div>
         )}
@@ -75,6 +76,7 @@ const DetailWrapper = styled.div`
   li{
     font-size: 1.2rem;
     line-height: 2.5rem;
+    margin-left: 1.25rem;
   }
   ul{
     margin-top: 2rem;
@@ -84,6 +86,7 @@ const DetailWrapper = styled.div`
     li {
       font-size: 1rem;
       line-height: 1.5rem;
+      margin-left: 1.25rem;
     }
     img {
       max-width: 25rem;
