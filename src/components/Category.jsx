@@ -8,22 +8,30 @@ import React from 'react'
 function Category() {
   return (
     <List>
-      <SLink to={'/cuisine/Italian'}>
-        <FaPizzaSlice />
-        <h4>Italian</h4>
-      </SLink>
-      <SLink to={'/cuisine/American'}>
-        <FaHamburger />
-        <h4>American</h4>
-      </SLink>
-      <SLink to={'/cuisine/Thai'}>
-        <GiNoodles />
-        <h4>Thai</h4>
-      </SLink>
-      <SLink to={'/cuisine/Japanese'}>
-        <GiChopsticks />
-        <h4>Japanese</h4>
-      </SLink>
+      <CategoryLink to={'/cuisine/Italian'}>
+        <IconWrapper>
+          <FaPizzaSlice />
+        </IconWrapper>
+        <Label>Italian</Label>
+      </CategoryLink>
+      <CategoryLink to={'/cuisine/American'}>
+        <IconWrapper>
+          <FaHamburger />
+        </IconWrapper>
+        <Label>American</Label>
+      </CategoryLink>
+      <CategoryLink to={'/cuisine/Thai'}>
+        <IconWrapper>
+          <GiNoodles />
+        </IconWrapper>
+        <Label>Thai</Label>
+      </CategoryLink>
+      <CategoryLink to={'/cuisine/Japanese'}>
+        <IconWrapper>
+          <GiChopsticks />
+        </IconWrapper>
+        <Label>Japanese</Label>
+      </CategoryLink>
     </List>
   )
 }
@@ -31,38 +39,77 @@ function Category() {
 const List = styled.div`
   display: flex;
   justify-content: center;
-  margin: 2rem 0rem;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+  margin: var(--spacing-lg) 0;
+
+  @media screen and (max-width: 900px) {
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+  }
 `
 
-const SLink = styled(NavLink)`
+const IconWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  text-decoration: none;
-  background:linear-gradient(35deg,#494949, #313131);
-  width: 6rem;
-  height: 6rem;
-  cursor: pointer;
-  transform: scale(0.8);
-
-  h4 {
-    color: white;
-    font-size: 0.9rem;
-  }
+  justify-content: center;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
 
   svg {
-    color: white;
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
+`
+
+const Label = styled.h4`
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin: 0;
+  transition: color var(--transition-fast);
+`
+
+const CategoryLink = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  text-decoration: none;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  background: var(--color-background);
+  border: 1.5px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  min-width: 100px;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--color-shadow);
+    border-color: var(--color-accent);
+
+    ${IconWrapper} {
+      color: var(--color-accent);
+    }
+
+    ${Label} {
+      color: var(--color-accent);
+    }
+  }
+
   &.active {
-    background: linear-gradient(to right, #f27121, #e94057);
-    svg {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(0, 112, 243, 0.3);
+
+    ${IconWrapper} {
       color: white;
     }
-    h4 {
-      color: white ;
+
+    ${Label} {
+      color: white;
     }
   }
 `

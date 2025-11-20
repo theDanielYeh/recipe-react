@@ -10,52 +10,84 @@ function Search() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate("/searched/" + input);
+    if (input.trim()) {
+      navigate("/searched/" + input);
+    }
   }
 
   return (
     <FormStyle onSubmit={submitHandler}>
-      <div>
-        <FaSearch></FaSearch>
-        <input
+      <SearchWrapper>
+        <SearchIcon>
+          <FaSearch />
+        </SearchIcon>
+        <SearchInput
           onChange={(e) => setInput(e.target.value)}
           type="text"
-          value={input}/>
-      </div>
+          value={input}
+          placeholder="Search for recipes..."
+        />
+      </SearchWrapper>
     </FormStyle>
   )
 }
 
 const FormStyle = styled.form`
-  margin: 0rem 20rem;
-  div {
-    position: relative;
-    width: 25em;
-    @media screen and (max-width: 900px) {
-      width: 15em;
-      margin-top: -2em;
-    }
-  }
-  input {
-    border: none;
-    background: linear-gradient(35deg, #494949, #313131);
-    font-size: 1.5rem;
-    color: white;
-    padding: 1rem 3rem;
-    border: none;
-    border-radius: 1rem;
-    outline: none;
-    width: 100%;
-    @media screen and (max-width: 900px) {
-      font-size: 1.2rem;
-    }
-  }
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+`
+
+const SearchWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+`
+
+const SearchIcon = styled.div`
+  position: absolute;
+  left: var(--spacing-md);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+
   svg {
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translate(100%, -50%);
-    color: white;
+    font-size: 1.125rem;
+  }
+`
+
+const SearchInput = styled.input`
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 3rem;
+  font-size: 1rem;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-primary);
+  background: var(--color-background);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  outline: none;
+  transition: all var(--transition-base);
+
+  &::placeholder {
+    color: var(--color-text-tertiary);
+  }
+
+  &:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.1);
+  }
+
+  &:hover {
+    border-color: var(--color-text-secondary);
+  }
+
+  @media screen and (max-width: 900px) {
+    font-size: 0.9375rem;
+    padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) 2.75rem;
   }
 `
 
